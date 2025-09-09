@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Tech Matoli</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {font-family: 'Inter', sans-serif;}
+    .swing { transform-origin: top center; animation: swing 4s ease-in-out infinite; }
+    @keyframes swing { 0%{ transform: rotate(-4deg);} 50%{ transform: rotate(4deg);} 100%{ transform: rotate(-4deg);} }
+    .pulse { animation: pulse 2s infinite; }
+    @keyframes pulse {0%{ transform:scale(1);} 50%{ transform:scale(1.05);} 100%{ transform:scale(1);} }
+    .fadeIn { animation: fadeIn 1.5s ease-in-out; }
+    @keyframes fadeIn {from{opacity:0} to{opacity:1}}
+    .orbit-wrap { position:relative; width:340px; height:340px; }
+    .orbit { position:absolute; inset:0; border-radius:9999px; animation: spin 14s linear infinite; }
+    @keyframes spin {to{transform:rotate(360deg)}}
+    .orbit .mooshak { position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size:2rem;}
+    .matoli-diya { animation: gentle 3s ease-in-out infinite; }
+    @keyframes gentle {0%{transform:translateY(0)}50%{transform:translateY(-5px)}100%{transform:translateY(0)}}
+    .modal { position:fixed; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:50; }
+    .modal-content { background:white; padding:1.5rem; border-radius:1rem; max-width:400px; text-align:center; animation:fadeIn 0.3s ease-in-out; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-yellow-50 via-amber-100 to-rose-50 min-h-screen text-stone-900">
+  <header class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-amber-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-amber-600">Digital Tech Matoli</h1>
+      <button id="musicToggle" class="px-3 py-1.5 rounded-xl bg-amber-500 text-white hover:bg-amber-600 transition">Music: Off</button>
+    </div>
+  </header>  <main class="max-w-6xl mx-auto px-4 py-8">
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="fadeIn">
+        <h2 class="text-3xl font-bold">Ganapati Bappa… <span class="text-amber-600">Tech</span> Morya</h2>
+        <p class="mt-3 text-stone-700">I am <b>Dhruv Sameer Salgaonkar</b> from Class 8, Saraswat Vidyalaya High School. This is my Digital Tech Matoli project blending tradition with technology.</p>
+        <div class="mt-4 p-4 rounded-xl bg-amber-50 border border-amber-200">
+          <h3 class="text-lg font-semibold text-amber-700">What is a Matoli?</h3>
+          <p class="mt-2 text-sm text-stone-700 leading-relaxed">Matoli is a traditional festive decoration created during Ganesh Chaturthi in Goa and nearby regions. It consists of various seasonal fruits, vegetables, leaves, roots, flowers, and natural items that are collected from the surroundings and hung around the idol of Lord Ganesha. Each item has a symbolic meaning — representing prosperity, nature’s bounty, devotion, and eco-friendliness. Matoli reminds us of our bond with nature and the importance of preserving biodiversity while celebrating festivals in a sustainable way.</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="orbit-wrap">
+          <div class="absolute inset-0 rounded-full border-2 border-amber-300/60"></div>
+          <div class="absolute inset-10 rounded-full border border-amber-300/40"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-32 h-32 rounded-2xl bg-gradient-to-br from-amber-400 to-rose-400 shadow-xl flex items-center justify-center text-white text-4xl">🕉️</div>
+          </div>
+          <div class="orbit"><div class="mooshak">🐭</div></div>
+        </div>
+        <div class="mt-6 matoli-diya w-20 h-20 rounded-full bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center text-5xl shadow-lg">🪔</div>
+        <p class="text-xs text-stone-500 mt-2">Traditional diya placed below Matoli.</p>
+      </div>
+    </section><!-- Hangings Grid -->
+<section class="mt-12">
+  <h3 class="text-xl font-semibold mb-4">Interactive Hangings</h3>
+  <p class="mb-6 text-sm text-stone-700">Click on each fruit or leaf below to learn more about its importance in Matoli.</p>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+    <div class="flex flex-col items-center">
+      <div class="w-px h-20 bg-stone-300"></div>
+      <button data-fruit="banana" class="swing pulse w-24 h-24 rounded-2xl bg-gradient-to-br from-yellow-200 to-yellow-400 flex items-center justify-center text-4xl shadow">🍌</button>
+      <span class="mt-2 font-medium">Banana</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="w-px h-20 bg-stone-300"></div>
+      <button data-fruit="coconut" class="swing pulse w-24 h-24 rounded-2xl bg-gradient-to-br from-green-200 to-emerald-400 flex items-center justify-center text-4xl shadow">🥥</button>
+      <span class="mt-2 font-medium">Coconut</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="w-px h-20 bg-stone-300"></div>
+      <button data-fruit="mango" class="swing pulse w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-200 to-pink-400 flex items-center justify-center text-4xl shadow">🥭</button>
+      <span class="mt-2 font-medium">Mango</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="w-px h-20 bg-stone-300"></div>
+      <button data-fruit="guava" class="swing pulse w-24 h-24 rounded-2xl bg-gradient-to-br from-green-100 to-green-300 flex items-center justify-center text-4xl shadow">🥝</button>
+      <span class="mt-2 font-medium">Guava</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="w-px h-20 bg-stone-300"></div>
+      <button data-fruit="betel" class="swing pulse w-24 h-24 rounded-2xl bg-gradient-to-br from-lime-200 to-lime-400 flex items-center justify-center text-4xl shadow">🍃</button>
+      <span class="mt-2 font-medium">Betel Leaf</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="w-px h-20 bg-stone-300"></div>
+      <button data-fruit="apple" class="swing pulse w-24 h-24 rounded-2xl bg-gradient-to-br from-red-200 to-red-400 flex items-center justify-center text-4xl shadow">🍎</button>
+      <span class="mt-2 font-medium">Apple</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="w-px h-20 bg-stone-300"></div>
+      <button data-fruit="pineapple" class="swing pulse w-24 h-24 rounded-2xl bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center text-4xl shadow">🍍</button>
+      <span class="mt-2 font-medium">Pineapple</span>
+    </div>
+  </div>
+</section>
+
+  </main>  <!-- Modal -->  <div id="fruitModal" class="hidden modal">
+    <div class="modal-content shadow-lg">
+      <div id="modalIcon" class="text-4xl mb-2">🍌</div>
+      <h4 id="modalTitle" class="text-lg font-semibold">Banana</h4>
+      <p id="modalText" class="text-sm text-stone-700 mt-2">Banana is offered as prasad, symbolizing simplicity and devotion.</p>
+      <button id="closeModal" class="mt-4 px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600">Close</button>
+    </div>
+  </div>  <footer class="text-center text-sm text-stone-600 py-6 border-t border-amber-200">
+    Built by Dhruv Sameer Salgaonkar — Saraswat Vidyalaya High School
+  </footer>  <audio id="music" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/18/audio_2d1f1e8b87.mp3" type="audio/mpeg" />
+  </audio>  <script>
+    const FRUITS = {
+      banana: {icon:'🍌', title:'Banana', text:'Banana is offered as prasad, symbolizing simplicity and devotion.'},
+      coconut: {icon:'🥥', title:'Coconut', text:'Breaking coconut symbolizes breaking ego and purity in devotion.'},
+      mango: {icon:'🥭', title:'Mango', text:'Mango is a seasonal fruit, symbol of auspiciousness and prosperity.'},
+      guava: {icon:'🥝', title:'Guava', text:'Guava is often included in offerings as a fresh seasonal fruit.'},
+      betel: {icon:'??', title:'Betel Leaf', text:'Betel leaves are used in rituals as a mark of respect and freshness.'},
+      apple: {icon:'🍎', title:'Apple', text:'Apple represents health, energy, and devotion when offered to God.'},
+      pineapple: {icon:'🍍', title:'Pineapple', text:'Pineapple is offered to bring sweetness and positive energy.'},
+    };
+
+    const modal = document.getElementById('fruitModal');
+    const modalIcon = document.getElementById('modalIcon');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('[data-fruit]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-fruit');
+        const data = FRUITS[key];
+        modalIcon.textContent = data.icon;
+        modalTitle.textContent = data.title;
+        modalText.textContent = data.text;
+        modal.classList.remove('hidden');
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    // Music toggle
+    const music = document.getElementById('music');
+    const musicToggle = document.getElementById('musicToggle');
+    let musicOn = false;
+    musicToggle.addEventListener('click', async () => {
+      if (!musicOn) { await music.play(); musicOn = true; musicToggle.textContent = 'Music: On'; }
+      else { music.pause(); musicOn = false; musicToggle.textContent = 'Music: Off'; }
+    });
+  </script></body>
+</html>
